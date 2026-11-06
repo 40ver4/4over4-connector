@@ -1,0 +1,10 @@
+{
+  "name": "4over4",
+  "version": "2.0.0",
+  "description": "Find, configure and price custom printing from 4OVER4.COM, then order on www.4over4.com. Sign in to track your own orders.",
+  "mcpServers": {
+    "4over4": {
+      "httpUrl": "https://www.4over4.com/appsapi/mcp"
+    }
+  }
+}

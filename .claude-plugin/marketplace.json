@@ -1,0 +1,18 @@
+{
+  "name": "fourover4",
+  "description": "The 4OVER4 plugin for Claude Code: custom printing from 4OVER4.COM.",
+  "owner": {
+    "name": "4OVER4.COM Inc.",
+    "email": "connector@4over4.com",
+    "url": "https://www.4over4.com"
+  },
+  "plugins": [
+    {
+      "name": "4over4",
+      "source": "./plugins/4over4",
+      "description": "Find, configure and price custom printing from 4OVER4.COM, then order on www.4over4.com. Sign in to track your own orders.",
+      "category": "shopping",
+      "homepage": "https://www.4over4.com/ai-mode"
+    }
+  ]
+}

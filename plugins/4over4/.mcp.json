@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "4over4": {
+      "type": "http",
+      "url": "https://www.4over4.com/appsapi/mcp"
+    }
+  }
+}
