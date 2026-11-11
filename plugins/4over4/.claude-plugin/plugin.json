@@ -11,7 +11,7 @@
   "homepage": "https://www.4over4.com/ai-mode",
   "repository": "https://github.com/40ver4/4over4-connector",
   "license": "MIT",
-  "keywords": ["4over4", "4over4 printing", "4over4 business cards", "4over4 order status"],
+  "keywords": ["4over4", "custom printing", "business cards", "flyers", "postcards", "banners", "stickers", "labels", "packaging", "print prices", "print delivery date", "print order status"],
   "icon": "./icon.png",
   "documentationUrl": "https://github.com/40ver4/4over4-connector#readme",
   "supportUrl": "https://www.4over4.com/ai-agents",

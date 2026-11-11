@@ -19,7 +19,7 @@ The plugin connects Claude to the 4OVER4 MCP server at `https://www.4over4.com/a
 | Skill | What it helps with |
 |---|---|
 | `find-and-price-print` | Find a product, compare products, get a live price for a quantity, see price breaks and estimated delivery dates |
-| `order-on-4over4` | Build a configured cart and hand you a link to www.4over4.com, where you upload artwork, choose shipping and pay |
+| `order-on-4over4` | Take a priced setup to the Checkout on 4OVER4 button or link, which opens www.4over4.com, where you upload artwork, choose shipping and pay |
 | `track-my-orders` | After you sign in: your orders, tracking, invoices, account, coins, and the link to cancel an order on www.4over4.com |
 
 Prices, specs and dates come live from the 4OVER4 tools. The plugin takes no payment: you pay only on www.4over4.com.
@@ -33,7 +33,7 @@ Prices, specs and dates come live from the 4OVER4 tools. The plugin takes no pay
 ## Privacy
 
 - **Without sign-in,** the tools read only public product, price, delivery and help information. Your requests to the tools (for example a product name, a quantity or a ZIP code) reach our server.
-- **After you sign in,** the tools can read your own 4OVER4 orders, tracking, invoices, profile, saved addresses, QR codes, coins and cart, when you ask for them. They never cancel an order: `cancel_order` gives the link to your orders page on www.4over4.com, where you cancel it yourself.
+- **After you sign in,** the tools can read your own 4OVER4 orders, tracking, invoices, profile, saved addresses, QR codes, coins and cart, when you ask for them. They never cancel an order: `get_order_cancel_link` gives the link to your orders page on www.4over4.com, where you cancel it yourself.
 - **What we receive:** the tool request Claude sends and, after sign-in, a connection token. We do not receive the rest of your conversation, and Claude never sees your 4OVER4 password.
 - **How long sign-in lasts:** up to 30 days; each access grant lasts 1 hour and renews by itself. Disconnect 4OVER4 in Claude's settings at any time.
 - **Never collected here:** card numbers or other payment details. Artwork upload, shipping and payment happen only on www.4over4.com.

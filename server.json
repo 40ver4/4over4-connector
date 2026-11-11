@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "com.4over4/ai-mode",
+  "name": "com.4over4/custom-printing",
   "title": "4OVER4",
-  "description": "Find, configure and price custom printing from 4OVER4.COM, then order on www.4over4.com.",
+  "description": "Custom printing from 4OVER4: business cards, flyers, banners, live prices, order on 4over4.com.",
   "version": "2.0.0",
   "websiteUrl": "https://www.4over4.com/ai-mode",
   "icons": [

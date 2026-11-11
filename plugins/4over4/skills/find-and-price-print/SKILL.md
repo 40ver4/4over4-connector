@@ -16,6 +16,7 @@ description: Use when someone wants to find a print product at 4OVER4 (business 
 | A goal with no product ("how do I promote my bakery") | `recommend` |
 | Several products for one goal or a campaign | `marketing_kit` |
 | "Something like this one" | `find_similar_products` |
+| "What goes with this one?" | `find_matching_print_products` |
 | "Which is better, A or B?" | `compare_products` with 2 to 4 slugs |
 
 Show one result at a time with a one-line reason. Ask one short question when the product is not clear yet.
@@ -25,7 +26,7 @@ Show one result at a time with a one-line reason. Ask one short question when th
 - `configure_product` gives the live total and the price per piece for one product, quantity, size, paper, finish and turnaround. Call it again when the customer changes any option.
 - A quantity snaps to the nearest real tier. When the result says so, tell the customer the quantity that was priced.
 - `price_breaks` gives the table of every quantity tier for one product, for "how much cheaper if I order more".
-- `print_calculator` answers print math: DPI, bleed, paper weight and file specs.
+- Print math: `calculate_print_resolution` (pixels and DPI), `calculate_print_bleed` (bleed and safe area), `convert_paper_weight` (paper weights), `get_print_file_setup` (a file's setup).
 - `daily_deals` shows today's deal and its code.
 
 ## 3. Delivery dates

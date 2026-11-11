@@ -6,18 +6,18 @@ Find, configure and price custom printing from 4OVER4.COM in your AI assistant, 
 
 This repository holds no app code. It holds the files that list the 4OVER4 MCP server in assistants and directories: a Claude plugin, a Claude Code marketplace, a Gemini CLI extension and an MCP Registry entry.
 
-**MCP server:** `https://www.4over4.com/appsapi/mcp` (Streamable HTTP, MCP 2025-06-18)
+**MCP server:** `https://www.4over4.com/appsapi/mcp` (Streamable HTTP, MCP 2025-11-25)
 **Sign-in:** OAuth 2.1 with dynamic client registration, at `https://www.4over4.com/appsapi/oauth`
 **Help page for AI agents:** https://www.4over4.com/ai-agents
 **Developer API description:** https://www.4over4.com/openapi.json
 
 ## What you can do
 
-- **Find print:** business cards, flyers, postcards, signs, labels, stickers, invitations and more, by product, industry, occasion or budget.
+- **Find custom printing:** business cards, flyers, postcards, banners, signs, labels, stickers, invitations and more, by product, industry, occasion or budget.
 - **Price it live:** the total and price per piece for your quantity, size, paper, finish and turnaround, plus the quantity price breaks.
 - **Delivery dates:** an estimated in-hands date, or live carrier options for your ZIP code.
 - **Help:** answers from the 4OVER4 help center on files, bleed, papers, proofs, returns and more.
-- **Order:** build a configured cart and get a link to www.4over4.com, where you upload artwork, choose shipping and pay. No payment happens in the assistant.
+- **Order:** a priced setup gives a Checkout on 4OVER4 button or a link to www.4over4.com, where you upload artwork, choose shipping and pay. No payment happens in the assistant.
 - **After you sign in:** your orders, tracking, invoices, profile, saved addresses, coins and cart; the link to cancel an order yourself on your 4OVER4 orders page.
 
 ## Add it to your assistant
@@ -41,7 +41,7 @@ Settings, Connectors, Add custom connector, then paste `https://www.4over4.com/a
 
 ### ChatGPT
 
-Search for 4OVER4 in the ChatGPT apps directory and press Connect. Until the listing is approved, add it in ChatGPT's developer mode as a custom app with the URL `https://www.4over4.com/appsapi/mcp`.
+Search for 4OVER4 in the ChatGPT plugin directory and press Connect. Until the listing is approved, add it in ChatGPT's developer mode as a custom app with the URL `https://www.4over4.com/appsapi/mcp`.
 
 ### Gemini CLI
 
@@ -75,13 +75,13 @@ Add a remote MCP server with the URL `https://www.4over4.com/appsapi/mcp` and no
 
 | Group | Tools |
 |---|---|
-| Find | `show_products`, `list_categories`, `recommend`, `marketing_kit`, `find_similar_products`, `compare_products`, `search_content` |
-| Price and delivery | `configure_product`, `price_breaks`, `delivery_by_zip`, `print_calculator`, `daily_deals` |
+| Find | `show_products`, `list_categories`, `recommend`, `marketing_kit`, `find_similar_products`, `find_matching_print_products`, `compare_products`, `search_content` |
+| Price and delivery | `configure_product`, `price_breaks`, `delivery_by_zip`, `daily_deals` |
+| Print files | `calculate_print_resolution`, `calculate_print_bleed`, `convert_paper_weight`, `get_print_file_setup` |
 | Help | `search_knowledge`, `talk_to_human`, `loyalty_tasks` |
-| Catalog, cart and checkout (UCP) | `search_catalog`, `lookup_catalog`, `get_product`, `create_cart`, `update_cart`, `cancel_cart`, `create_checkout`, `get_checkout`, `update_checkout`, `complete_checkout`, `cancel_checkout` |
-| Your account (sign-in) | `get_my_orders`, `get_order_details`, `get_order`, `cancel_order`, `get_my_profile`, `get_my_coins`, `get_cart` |
+| Your account (sign-in) | `get_my_orders`, `get_order_details`, `get_order_cancel_link`, `get_my_profile`, `get_my_coins`, `get_cart` |
 
-`complete_checkout` places nothing and charges nothing: it returns the link where you pay on www.4over4.com. `cancel_order` cancels nothing: it gives the link to your orders page on www.4over4.com, where you cancel a job yourself.
+`create_checkout` runs only when you press Checkout on 4OVER4 on a price card: it opens www.4over4.com, where you pay, and charges nothing. `get_order_cancel_link` cancels nothing: it gives the link to your orders page on www.4over4.com, where you cancel a job yourself.
 
 ## For AI agents and developers
 
@@ -95,7 +95,8 @@ Everything an agent needs is published on www.4over4.com. No API key is needed.
 | OAuth protected resource (RFC 9728) | `https://www.4over4.com/.well-known/oauth-protected-resource` |
 | OAuth authorization server (RFC 8414) | `https://www.4over4.com/.well-known/oauth-authorization-server` |
 | A2A agent card | `https://www.4over4.com/.well-known/agent-card.json` |
-| UCP profile (cart and checkout) | `https://www.4over4.com/.well-known/ucp` |
+| UCP profile (for shopping agents) | `https://www.4over4.com/.well-known/ucp` |
+| UCP server (cart and checkout, for shopping agents) | `https://www.4over4.com/appsapi/ucp/mcp` |
 | OpenAPI 3.1 description | `https://www.4over4.com/openapi.json` |
 | llms.txt | `https://www.4over4.com/llms.txt` |
 | Help page | `https://www.4over4.com/ai-agents` |
@@ -114,8 +115,6 @@ Everything an agent needs is published on www.4over4.com. No API key is needed.
 - How fast could 1,000 flyers reach ZIP 10001?
 - What should a new bakery print?
 - What DPI and bleed do I need for a 3.5 x 2 inch card?
-- What is today's daily deal?
-- Put 500 soft touch business cards in a cart and give me the checkout link.
 - Where is my latest order and when will it arrive? (after sign-in)
 
 ## What is in this repository
@@ -125,7 +124,7 @@ Everything an agent needs is published on www.4over4.com. No API key is needed.
 | `plugins/4over4/` | The Claude plugin: `.claude-plugin/plugin.json`, `.mcp.json`, three skills, README, license, icon |
 | `.claude-plugin/marketplace.json` | The Claude Code marketplace `fourover4` |
 | `gemini-extension.json` | The Gemini CLI extension |
-| `server.json` | The entry for the Official MCP Registry, `com.4over4/ai-mode` |
+| `server.json` | The entry for the Official MCP Registry, `com.4over4/custom-printing` |
 | `glama.json` | Glama ownership |
 | `assets/` | The 4OVER4 square logo at 512, 400 and 48 px |
 
@@ -134,7 +133,7 @@ Nothing here runs on your machine: no scripts, hooks or packages. Every tool run
 ## Privacy
 
 - **Without sign-in,** the tools read only public product, price, delivery and help information. Your requests to the tools (for example a product name, a quantity or a ZIP code) reach our server.
-- **After you sign in,** the tools can read your own 4OVER4 orders, tracking, invoices, profile, saved addresses, QR codes, coins and cart, when you ask for them. They never cancel an order: `cancel_order` gives the link to your orders page on www.4over4.com, where you cancel it yourself.
+- **After you sign in,** the tools can read your own 4OVER4 orders, tracking, invoices, profile, saved addresses, QR codes, coins and cart, when you ask for them. They never cancel an order: `get_order_cancel_link` gives the link to your orders page on www.4over4.com, where you cancel it yourself.
 - **What we receive:** the tool request your assistant sends and, after sign-in, a connection token. We do not receive the rest of your conversation, and the assistant never sees your 4OVER4 password.
 - **How long sign-in lasts:** up to 30 days; each access grant lasts 1 hour and renews by itself. Disconnect 4OVER4 in your assistant's settings at any time.
 - **Never collected here:** card numbers or other payment details. Artwork upload, shipping and payment happen only on www.4over4.com.
