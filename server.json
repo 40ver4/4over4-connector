@@ -3,8 +3,12 @@
   "name": "com.4over4/custom-printing",
   "title": "4OVER4",
   "description": "Custom printing from 4OVER4: business cards, flyers, banners, live prices, order on 4over4.com.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "websiteUrl": "https://www.4over4.com/ai-mode",
+  "repository": {
+    "url": "https://github.com/40ver4/4over4-connector",
+    "source": "github"
+  },
   "icons": [
     {
       "src": "https://cdn.4over4.com/newmedia/mapp/logo-square.png",
